@@ -23,6 +23,17 @@ try {
     let popup = L.popup();
     let idOfLabel;
 
+    const months = {0:"January", 1:"February", 2:"March", 3:"April", 4:"May", 5:"June", 6:"July", 7:"August", 8:"September", 9:"October", 10:"November", 11:"December"};
+    const date = document.querySelector(".date");
+    let data = new Date(),
+        month = data.getMonth(),
+        year = data.getFullYear(),
+        num = data.getDate();
+    date.innerHTML = `${months[month]} ${num}, ${year}`;
+
+
+    let loupe = L.control({position: 'topright'});
+
     let legend = L.control({position: 'topright'});
     let legendInfo = L.control({position: 'topright'});
 
@@ -89,6 +100,17 @@ return d > 5000000 ? '#7a221b' :
                 '#feeceb';
 };
 
+loupe.onAdd = (map) => {
+    return L.DomUtil.create('div', 'loupe')
+};
+loupe.addTo(map);
+
+document.querySelector("#map > div.leaflet-control-container > div.leaflet-top.leaflet-right > div.loupe.leaflet-control").addEventListener('click' , () => {
+    document.body.classList.toggle("fullScreen"); 
+    document.querySelector("#map").style.position = document.body.className.indexOf("fullScreen") > -1 ? 'absolute' : 'relative';
+    document.body.scrollTop = 0;
+});
+
 legendInfo.onAdd = (map) => {
 return L.DomUtil.create('div', 'legendInfo')
 };
@@ -137,6 +159,9 @@ if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
 
 const sendCountry = (e) => {
     const layer = e.target;
+
+    renderCharts('.charts', layer.feature.properties.name);
+
     console.log(layer.feature.properties.name);
     
     let createdCharts = document.querySelectorAll('.created-chart');
@@ -149,6 +174,7 @@ const sendCountry = (e) => {
     sliderButton.remove();
     chartSliderButtons.remove();
     renderCharts('.charts', layer.feature.properties.id);
+
 }
 
 const highlightClear = (e) => {
