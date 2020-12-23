@@ -3,13 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>График</title>
+	<title>COVID-19 Dashboard</title>
 </head>
 <body>
+	<div class="header">
+		<h1>COVID-19 Dashboard</h1>
+	</div>
 	<div class="container">
 		<div class="left-block"></div>
 		<div class="right-block">
-			<div class="map"></div>
+			<div id="map" class="map"></div>
 			<div class="bottom-block">
 				<div class="tables-wrapper"></div>
 				<div class="chart-wrapper">
@@ -19,6 +22,11 @@
 				</div>	
 			</div>		
 		</div>	
+	</div>
+	<div class="footer">
+		<p></p>
+		<p></p>
+		<p></p>
 	</div>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>

@@ -1,3 +1,22 @@
+@font-face {font-family:'Roboto';font-style:normal;font-weight:400;
+    src: local('Roboto'), local('Roboto'), url('../font/Roboto-Regular.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    width: 100%;
+	height: 100%;
+	font: 12px 'Roboto', Arial, Helvetica, sans-serif;
+  }
+ .header h1 {
+	font: normal 400 1.5em 'Roboto', Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin: 0 auto; 
+	padding: 3px 0;
+ }
 .container {
 	display: flex;
 	justify-content: space-between;
@@ -16,17 +35,6 @@
 .right-block {
 	width: 74%;
 	height: 100vh;
-}
-
-.map {
-	width: 100%;
-	height: 66vh;
-
-	background-image: url('../img/map.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	border: 3px solid yellow;
 }
 
 .bottom-block {
@@ -81,6 +89,7 @@
 	border-radius: 5px;
 	outline: none;
 	transition: 0.3s;
+	z-index: 999;
 }
 
 .chart-button:hover {
@@ -101,7 +110,7 @@
 	right: 0;
 	width: 85vw;
 	height: 85vh;
-	z-index: 10;
+	z-index: 1000;
 }
 
 .chart-slider-buttons {
@@ -140,3 +149,83 @@
 	display: block;
 	z-index: 5;
 }
+
+/** Map style **/
+.map { width: 100%; height: 66vh }
+.leaflet-control.legendInfo {
+  width: 22px;
+  height: 22px;
+  background: url('../img/info.png') no-repeat;
+  background-size: cover;
+  background-position: 100% 0%;
+  cursor: pointer;
+  z-index: 801;
+}
+.map .legendInfo:hover { background-position: 0% 0% }
+.map .legend span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.map .legend { color: #000 } 
+.map .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; }
+.map .info { opacity: 0; top: -32px; right: 24px; padding: 6px 8px; font: 14px 'Roboto', Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.9); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; }
+.map .info.openLegend {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.map .popUp { border: 1px solid gray }
+#map.leaflet-container {
+    background: rgb(8,164,151);
+    background: radial-gradient(circle, rgba(8,164,151,1) 0%, rgba(0,106,182,1) 100%);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.labelActive label, .labelConfirm label, .labelRecover label, .labelDeaths label {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #fff;
+    font: normal 400 16px 'Roboto', Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+.labelActive label{
+    border: 2px solid #fff;
+    background-color: #9f8f70;
+}
+.labelDeaths label {
+    border: 2px solid #fff;
+    background-color: #08243d; 
+}
+.labelRecover label{
+    border: 2px solid #fff;
+    background-color: #015b70; 
+}
+.labelConfirm label{
+    border: 2px solid #fff;
+    background-color: #1694b8;     
+}
+.leaflet-container input[type="radio"] { display: none }
+.leaflet-container .labelActive input[type="radio"]:checked+label {
+    background: #fff;
+    color: #9f8f70;
+    border: 2px solid #9f8f70;
+}
+.leaflet-container .labelDeaths input[type="radio"]:checked+label {
+    background: #fff;
+    color: #08243d;
+    border: 2px solid #08243d;
+}
+.leaflet-container .labelRecover input[type="radio"]:checked+label {
+    background: #fff;
+    color: #015b70;
+    border: 2px solid #015b70;
+}
+.leaflet-container .labelConfirm input[type="radio"]:checked+label {
+    background: #fff;
+    color: #1694b8;
+    border: 2px solid #1694b8;
+}
+.leaflet-control.labelActive, .leaflet-control.labelConfirm, .leaflet-control.labelRecover, .leaflet-control.labelDeaths { clear: none }
+/** End Map style **/
