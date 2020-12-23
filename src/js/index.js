@@ -159,11 +159,7 @@ if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
 
 const sendCountry = (e) => {
     const layer = e.target;
-
-    renderCharts('.charts', layer.feature.properties.name);
-
-    console.log(layer.feature.properties.name);
-    
+  
     let createdCharts = document.querySelectorAll('.created-chart');
     let sliderButton = document.querySelector('.chart-button');
     let chartSliderButtons = document.querySelector('.chart-slider-buttons');
@@ -174,7 +170,6 @@ const sendCountry = (e) => {
     sliderButton.remove();
     chartSliderButtons.remove();
     renderCharts('.charts', layer.feature.properties.id);
-
 }
 
 const highlightClear = (e) => {
