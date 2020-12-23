@@ -3,14 +3,20 @@
 }
 * {
     margin: 0;
-    padding: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
   }
   
   html, body {
     width: 100%;
 	height: 100%;
 	font: 12px 'Roboto', Arial, Helvetica, sans-serif;
+	background: linear-gradient(#e7fcfa, rgba(199, 240, 238, 0.801));
+
   }
+
+  
  .header h1 {
 	font: normal 400 1.5em 'Roboto', Arial, Helvetica, sans-serif;
 	text-align: center;
@@ -21,15 +27,35 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	max-width: 1280px;
-	height: 100vh;
-	margin: 0 auto;
+	/*max-width: 1280px;*/
+	width:100%;
+	height: 100%;
+/*	margin: 0 auto;*/
 }
 
 .left-block {
+	border: 2px solid #9f8f70;
+	border-radius: 10px;
 	width: 25%;
 	height: 100vh;
-	border: 3px solid green;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a1bdcf), to(#69c3db));
+  background: linear-gradient(#a1bdcf, #69c3db);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .right-block {
@@ -42,14 +68,14 @@
 	justify-content: space-between;
 	width: 100%;
 	height: 33vh;
-	border: 3px solid blue;
+	/*border: 3px solid blue;*/
+	margin-top:0.5rem;
 }
 
-.tables-wrapper {
-	width: 40%;
-}
+
 
 .chart-wrapper {
+	
 	position: relative;
 
 	margin-top: auto;
@@ -178,7 +204,8 @@
 #map.leaflet-container {
     background: rgb(8,164,151);
     background: radial-gradient(circle, rgba(8,164,151,1) 0%, rgba(0,106,182,1) 100%);
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	border-radius: 10px;
 }
 .labelActive label, .labelConfirm label, .labelRecover label, .labelDeaths label {
     display: flex;
@@ -227,5 +254,350 @@
     color: #1694b8;
     border: 2px solid #1694b8;
 }
+
+.results {
+	height: 50rem;
+	overflow: auto;
+	width: 100%;
+  }
+  
+  tr {
+	vertical-align: middle;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+  }
+
+  .fullWindowContainer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+  }
+  
+  .fullWindowButtom {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	margin-bottom: 0.2rem;
+	-webkit-box-pack: end;
+		-ms-flex-pack: end;
+			justify-content: flex-end;
+  }
+  
+  .fullWindow {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+  }
+  
+  .fullWindowEnd {
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+	margin-left: 0%;
+  }
+  
+  .fullWindowEndDisplayNone {
+	display: none;
+  }
+  
+  .keyboardButton {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 2rem;
+	height: 1rem;
+	cursor: pointer;
+  }
+  
+  .fullScreen {
+	z-index:1110;
+	width: 100%;
+	position: absolute;
+  }
+  .tables-wrapper {
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#a1bdcf), to(#015b70));*/
+	/*background: linear-gradient(#e7fcfa, rgba(199, 240, 238, 0.568));*/
+	background: linear-gradient(#e7fcfa, rgba(199, 240, 238, 0.801));
+	border: 2px solid #9f8f70;
+	border-radius: 10px;
+  /*border: 2px solid #1694b8;*/
+  /*background:#fff;*/
+   /*background: #fff;*/
+    color: #1694b8;
+    
+  outline: none;
+  padding: 0.5rem;
+ width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*color:#666;*/
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+  .total {
+	  margin:1.5rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+			
+  }
+  
+  input {
+	font-family: 'Roboto', sans-serif;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e7fcfa), to(rgba(199, 240, 238, 0.568)));
+	background: linear-gradient(#e7fcfa, rgba(199, 240, 238, 0.568));
+	outline: none;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	width: 100%;
+	height: 2.5rem;
+  }
+  
+  .countries {
+	table-layout: fixed;
+	display: table;
+	border-collapse: collapse;
+	padding: 1rem;
+	list-style-type: none;
+	border-radius: 3px;
+	width: 100%;
+  }
+  
+  .country-item {
+	background-color: white;
+	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+	border-collapse: collapse;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	height: 2.5rem;
+	padding: 0.1rem;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	
+	background: -webkit-gradient(linear, left top, left bottom, from(#e7fcfa), to(rgba(199, 240, 238, 0.801)));
+	background: linear-gradient(#e7fcfa, rgba(199, 240, 238, 0.801));
+	font-size: 1.1rem;
+	font-weight: 500;
+  }
+  
+  .country-item__flag {
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-right: 0.5rem;
+  }
+  
+  .country-item__name {
+	font-weight: normal;
+	letter-spacing: normal;
+	text-align: left;
+	width: 65%;
+  }
+  
+  .country-item__header {
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	color: white;
+	font-size: 1.1rem;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a1bdcf), to(#015b70));
+	background: linear-gradient(#a1bdcf,rgba(0,106,182,1));
+	padding: 0.2rem;
+  }
+  
+  .country-item__population {
+	letter-spacing: normal;
+	margin: 0;
+	width: 35%;
+  }
+  
+  .country-item__population--text {
+	letter-spacing: normal;
+	margin: 0;
+	text-transform: uppercase;
+  }
+  
+  .country-item__tr {
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+  }
+  
+  .displayNone {
+	display: none;
+  }
+  
+  .table_sort table {
+	border-collapse: collapse;
+  }
+  
+  table thead {
+	  font-size: 1.2rem;
+	display: block;
+	position: -webkit-sticky;
+	position: sticky;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			
+  }
+  
+  table tbody {
+	width: 100%;
+	display: block;
+  }
+  
+  ::-webkit-scrollbar {
+	width: 0.1px;
+	height: 0.1px;
+	background-color: #143861;
+  }
+  
+  .results::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+  }
+  
+  table {
+	width: 100%;
+  }
+  
+  .use-keyboard-input {
+	display: block;
+	width: 90%;
+	margin: 30px auto;
+	padding: 10px;
+	font-size: 20px;
+	height: calc(100vh - 380px);
+	min-height: 300px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+	outline: none;
+  }
+  
+  .keyboard {
+	z-index: 1200;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 5px 0;
+	background:#e7fcfa;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+	user-select: none;
+	transition: bottom 0.4s;
+  }
+  
+  .keyboard--hidden {
+	bottom: -100%;
+  }
+  
+  .keyboard__keys {
+	text-align: center;
+  }
+  
+  .keyboard__key {
+	height: 45px;
+	width: 6%;
+	max-width: 90px;
+	margin: 3px;
+	border-radius: 13px;
+	border: none;
+	background: linear-gradient(#a1bdcf,#015b70);
+	color: #ffffff;
+	font-size: 1.4rem;
+	outline: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: top;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .keyboard__key:hover{
+	background: #a1bdcf;
+  }
+  
+  .activeFisKeyboard {
+	background:#a1bdcf;
+  }
+  
+  .keyboard__key:active {
+	background: linear-gradient(#a1bdcf,#08243d);
+  }
+  
+  .keyboard__key--wide {
+	width: 12%;
+  }
+  
+  .keyboard__key--extra-wide {
+	width: 36%;
+	max-width: 500px;
+  }
+  
+  .keyboard__key--activatable::after {
+	content: '';
+	top: 10px;
+	right: 10px;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 50%;
+  }
+  
+  .keyboard__key--active::after {
+	background: #08ff00;
+  }
+  
+  .keyboard__key--dark {
+	background: rgba(0, 0, 0, 0.25);
+  }
+  
+  .key__number--hidden {
+	display: none;
+  }
+  
+  .special__element--hidden {
+	display: none;
+  }
+  
+  .ru__hidden {
+	display: none;
+  }
+  
+  .en__hidden {
+	display:none;
+  }
 .leaflet-control.labelActive, .leaflet-control.labelConfirm, .leaflet-control.labelRecover, .leaflet-control.labelDeaths { clear: none }
 /** End Map style **/
