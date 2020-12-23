@@ -1,0 +1,142 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 1280px;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+.left-block {
+	width: 25%;
+	height: 100vh;
+	border: 3px solid green;
+}
+
+.right-block {
+	width: 74%;
+	height: 100vh;
+}
+
+.map {
+	width: 100%;
+	height: 66vh;
+
+	background-image: url('../img/map.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border: 3px solid yellow;
+}
+
+.bottom-block {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 33vh;
+	border: 3px solid blue;
+}
+
+.tables-wrapper {
+	width: 40%;
+}
+
+.chart-wrapper {
+	position: relative;
+
+	margin-top: auto;
+	margin-bottom: auto;
+
+	width: 51%;
+	height: max-content;
+	
+	background-color: #ffffff;
+	transition: 0.3s;
+}
+
+.charts {
+	margin-bottom: 5px;
+	background-color: #fff;
+}
+
+.render-chart {
+	height: 300px;
+}
+
+.chart-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	margin: 0;
+	padding: 0;
+
+	width: 30px;
+	height: 30px;
+
+	background-image: url(../img/FullScreen.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	transition: 0.3s;
+}
+
+.chart-button:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.chart-button--fullscrean {
+	background-image: url(../img/minScreen.png);
+}
+
+.chart--fullscrean {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 85vw;
+	height: 85vh;
+	z-index: 10;
+}
+
+.chart-slider-buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.chart-left,
+.chart-right {
+	width: 30px;
+	height: 30px;
+
+	background-color: #fff;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	outline: none;
+}
+
+.chart-left:hover,
+.chart-right:hover {
+	cursor: pointer;
+}
+
+.chart-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.chart-overlay--active {
+	display: block;
+	z-index: 5;
+}
