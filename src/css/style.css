@@ -229,3 +229,43 @@
 }
 .leaflet-control.labelActive, .leaflet-control.labelConfirm, .leaflet-control.labelRecover, .leaflet-control.labelDeaths { clear: none }
 /** End Map style **/
+
+.footer {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+
+	margin: 0 auto;
+	padding: 30px 30px;
+	max-width: 1280px;
+
+	background: rgb(43,40,99);
+	background: linear-gradient(90deg, rgba(43,40,99,1) 0%, rgba(0,212,255,1) 48%, rgba(9,107,121,1) 100%);
+}
+
+.footer-list {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.footer-link {
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: 400;
+	color: #ffffff;
+	letter-spacing: 1px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.footer-link:hover {
+	color: #d6f6fb
+}
+
+.course-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
