@@ -23,6 +23,7 @@
 	margin: 0 auto; 
 	padding: 3px 0;
  }
+ h1 .date {display: inline; color: #08243d; font: normal 400 0.8em 'Roboto', Arial, Helvetica, sans-serif;}
 .container {
 	display: flex;
 	justify-content: space-between;
@@ -136,7 +137,7 @@
 	right: 0;
 	width: 85vw;
 	height: 85vh;
-	z-index: 1000;
+	z-index: 1002;
 }
 
 .chart-slider-buttons {
@@ -173,11 +174,37 @@
 
 .chart-overlay--active {
 	display: block;
-	z-index: 5;
+	z-index: 1001;
 }
 
 /** Map style **/
 .map { width: 100%; height: 66vh }
+.fullScreen {
+	overflow: hidden;
+}
+.fullScreen .map{
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		overflow: hidden;
+		transition: height 0.5s;
+}
+.map .loupe {
+	width: 22px;
+	height: 22px;
+	background: url('../img/FullScreen_white.png') no-repeat;
+	background-size: cover;
+	z-index: 801;
+}
+.fullScreen .map .loupe {
+	background: url('../img/minScreen_white.png') no-repeat;
+	background-size: cover;
+}
 .leaflet-control.legendInfo {
   width: 22px;
   height: 22px;
@@ -601,3 +628,43 @@
   }
 .leaflet-control.labelActive, .leaflet-control.labelConfirm, .leaflet-control.labelRecover, .leaflet-control.labelDeaths { clear: none }
 /** End Map style **/
+
+.footer {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+
+	margin: 0 auto;
+	padding: 30px 30px;
+	max-width: 1280px;
+
+	background: rgb(43,40,99);
+	background: linear-gradient(90deg, rgba(43,40,99,1) 0%, rgba(0,212,255,1) 48%, rgba(9,107,121,1) 100%);
+}
+
+.footer-list {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.footer-link {
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: 400;
+	color: #ffffff;
+	letter-spacing: 1px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.footer-link:hover {
+	color: #d6f6fb
+}
+
+.course-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

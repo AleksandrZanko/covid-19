@@ -58,7 +58,8 @@ export async function getApi(country) {
   
     return _allApi;
   } else {
-    let allUrl = statusArr.map((item) => `https://api.covid19api.com/dayone/country/${country.toLowerCase()}/status/${item}`);
+    console.log(country)
+    let allUrl = statusArr.map((item) => `https://api.covid19api.com/dayone/country/${country}/status/${item}`);
     let allResponce = allUrl.map((url) => fetch(url));
 
     let responceCountry = await fetch('https://restcountries.eu/rest/v2/all?fields=name;population;flag');
