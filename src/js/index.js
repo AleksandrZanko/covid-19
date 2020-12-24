@@ -557,4 +557,3 @@ const tableSort = () => {
         })
     );
 };
-}
