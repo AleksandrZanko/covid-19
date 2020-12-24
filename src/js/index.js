@@ -319,6 +319,7 @@ const showCountries = async () => {
     totalDeath.innerHTML = `Total deaths:  ${getTotalDeaths()}`;
     totalRecovered.innerHTML = `Total recovered:  ${getTotalRecovered()}`;
     tableSort();
+}
 
 showCountries();
 
