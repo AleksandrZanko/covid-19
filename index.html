@@ -3,14 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>COVID-19 Dashboard</title>
+	<title>COVID-19 Dashboard</title>										   
+    <link rel="shortcut icon" href="./img/corona.png" type="image/png">
+    <script type="module" src="js/index.js" defer> </script>
+    <meta content="width = device-width, initial-scale = 1" name="viewport" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">																				 
 <link href="style.css" rel="stylesheet"></head>
 <body>
+	
 	<div class="header">
 		<h1>COVID-19 Dashboard <div class="date"></div></h1>
 	</div>
 	<div class="container">
-		<div class="left-block"></div>
+		
+		<div class="left-block">
+			<div class="fullWindowContainer">
+				<img class="keyboardButton" src="img/img/key.png" alt="pic">
+				
+				<div class="fullWindowButtom">
+					<img class="fullWindow" src="img/img/pngwing.com.png" alt="pic">
+					<img class="fullWindowEnd displayNone" src="img/img/pngegg.png" alt="pic">
+				</div>
+			</div>
+			<input type="text" id="search" placeholder="Search for a Country">
+			<div class="results"></div>	
+		</div>
 		<div class="right-block">
 			<div id="map" class="map"></div>
 			<div class="bottom-block">
@@ -26,21 +43,21 @@
 	<div class="footer">
 		<ul class="footer-list">
 			<li>
-				<a class="footer-link" href="https://github.com/YuliaEnik">Yulia Aleinik</a>
+				<a class="footer-link" href="https://github.com/YuliaEnik">github.com/YuliaEnik</a>
 			</li>
 			<li>
-				<a class="footer-link" href="https://github.com/IvanPekh">Yliya Pehota</a>
+				<a class="footer-link" href="https://github.com/IvanPekh">github.com/IvanPekh</a>
 			</li>
 			<li>
-				<a class="footer-link" href="https://github.com/AleksandrZanko">Aleksandr Zanko</a>
+				<a class="footer-link" href="https://github.com/AleksandrZanko">github.com/AleksandrZanko</a>
 			</li>
 		</ul>
 		<div class="course-info">
 			<img src="img/img/rs_school_js.svg" width="100px" height="50px" alt="course-logo">
 			<a class="footer-link" href="https://rs.school/js/">Ссылка на курс</a>			
-		</div> 
+		</div>
 	</div>
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script type="text/javascript" src="index.js"></script></body>
 </html>
